@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <!-- A4 — Predict the output (5 marks) -->
+  <!-- Open this file in a browser and click the button to verify,
+       but write your prediction FIRST. -->
+
+  <div id="outer">
+    <div id="inner">
+      <button id="btn">Click me</button>
+    </div>
+  </div>
+
+  <script>
+    const outer = document.querySelector('#outer');
+    const inner = document.querySelector('#inner');
+    const btn = document.querySelector('#btn');
+
+    outer.addEventListener('click', () => console.log('outer bubble'));
+    outer.addEventListener('click', () => console.log('outer capture'), true);
+    inner.addEventListener('click', () => console.log('inner bubble'));
+    inner.addEventListener('click', () => console.log('inner capture'), true);
+    btn.addEventListener('click', () => console.log('button'));
+
+    // Output:
+    // outer capture
+    // inner capture
+    // button 
+    // outer bubble
+    // inner capture
+
+    // Reasoning:
+    // here we are using the addEventListener were the event is performed here so when
+    // we are using the buttons here it will be go to the
+    // bubble
+    // capture
+    // button
+    // so when we click on the button it will be first going and capture and start bubbling
+
+    // What changes with stopPropagation() on the inner capture listener:
+    // i think it will stop the value to execute
+  </script>
+</body>
+</html>
