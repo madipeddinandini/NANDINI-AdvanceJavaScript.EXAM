@@ -13,7 +13,7 @@ const [a1, a2, a3] = makeAdders();
 console.log(a1(10), a2(10), a3(10));
 
 // Output:
-// 3
+// 14 14 14
 
 // Reasoning:
 // because we are using the var so var is be changing it value for every time when we change 
